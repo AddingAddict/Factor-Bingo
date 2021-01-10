@@ -1,0 +1,99 @@
+label {
+	padding: 10px;
+	text-align: center;
+	font-size: 24px;
+}
+
+input {
+	padding: 10px;
+	border: 2px #666 solid;
+	text-align: center;
+}
+
+button {
+	padding: 10px;
+	text-align: center;
+}
+
+th, td {
+	padding: 10px;
+	border: 2px #666 solid;
+	text-align: center;
+}
+
+.row {
+  	width: 100%;
+	padding: 4px;
+  	display: flex;
+  	flex-direction: row;
+  	justify-content: center;
+}
+
+.block {
+	padding: 20px;
+}
+
+.text {
+	font-size: 20px;
+}
+
+.input {
+	width: 80px;
+	font-size: 20px;
+}
+
+.gen {
+	font-size: 20px;
+}
+
+.draw {
+	width: 120px;
+	padding: 10px;
+	text-align: center;
+	font-size: 32px;
+}
+
+.drawNumText {
+	display: block;
+	width: 250px;
+	height: 36px;
+	padding: 10px;
+	text-align: center;
+	font-size: 32px;
+}
+
+.drawNum {
+	display: block;
+	width: 70px;
+	height: 36px;
+	padding: 10px;
+	border: 2px #666 solid;
+	text-align: center;
+	font-size: 32px;
+}
+
+.factsText {
+	display: block;
+	width: 100px;
+	height: 36px;
+	padding: 10px;
+	text-align: center;
+	font-size: 32px;
+}
+
+.factsNum {
+	width: 400px;
+	padding: 10px;
+	border: 2px #666 solid;
+	text-align: center;
+	font-size: 32px;
+}
+
+.name {
+	font-size: 24px;
+}
+
+.cell {
+	width: 30px;
+	font-size: 24px;
+}
