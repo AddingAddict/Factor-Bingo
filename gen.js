@@ -17,9 +17,19 @@ function genBoards() {
 	// read input
 	nBoards = parseInt(document.getElementById("nBoards").value);
 	size = parseInt(document.getElementById("size").value);
-	min = 11;
-	max = 50;
-	incr = 9;
+	if(size == 3) {
+		factors = [2,3,4,5,6,7,8,9,10,11,12];
+		min = 7;
+		max = 30;
+	} else if(size == 4) {
+		factors = [2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+		min = 11;
+		max = 50;
+	} else if(size == 5) {
+		factors = [2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
+		min = 16;
+		max = 75;
+	}
 	nonprimeNums = [...Array(max + 1).keys()].filter(x => (!primes.includes(x) || x<min)).slice(min);
 	usedFacts = [...factors];
 	usedFacts.fill(false);
@@ -37,10 +47,8 @@ function genBoards() {
 	factsNum.setAttribute("placeholder", "")
 
 	// check if there's enough numbers for bingo board
-	if(factors.length < size*size) {
-		alert("Board size too large for given number range.\nIncrease the number range or decrease board size.");
-	} else if((max - min + 1) < 2*incr) {
-		alert("Increment too large for given number range.\nIncrease the number range or decrease increment.");
+	if(size > 5 || size < 3) {
+		alert("Board size not supported (must be 3, 4, or 5).");
 	} else {
 		// get div with boards
 		let boards = document.getElementById("boards");
