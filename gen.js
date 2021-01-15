@@ -10,7 +10,7 @@ let remainFacts;
 let draws;
 let drawInd;
 
-let factors = [2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+let factors;
 let primes = [2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97];
 
 function genBoards() {
@@ -29,6 +29,10 @@ function genBoards() {
 		factors = [2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
 		min = 16;
 		max = 75;
+	} else if(size == 6) {
+		factors = [2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40];
+		min = 21;
+		max = 100;
 	}
 	nonprimeNums = [...Array(max + 1).keys()].filter(x => (!primes.includes(x) || x<min)).slice(min);
 	usedFacts = [...factors];
@@ -44,11 +48,12 @@ function genBoards() {
 	let factsNum = document.getElementById("factsNum");
 
 	drawNum.innerHTML = "";
+	factsNum.value = "";
 	factsNum.setAttribute("placeholder", "")
 
 	// check if there's enough numbers for bingo board
-	if(size > 5 || size < 3) {
-		alert("Board size not supported (must be 3, 4, or 5).");
+	if(size > 6 || size < 3) {
+		alert("Board size not supported (must be 3, 4, 5, or 6).");
 	} else {
 		// get div with boards
 		let boards = document.getElementById("boards");
@@ -139,7 +144,7 @@ function newBoard(nBoard) {
 	let name = document.createElement("INPUT");
 	let namewidth = 0;
 	name.className = "name";
-	if(max < 100) {
+	if(factors[factors.length-1] < 100) {
 		name.style.width = (size*56+2) + "px";
 	} else {
 		name.style.width = (size*62+2) + "px";
